@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<style type="text/css">
+<!--
+body {
+	margin: 0.5cm;
+	/*
+	font-size: 13px;
+	*/
+	}
+p   {
+    margin-top: 0.1em;
+    margin-bottom: 0.5em;
+    }
+b   {
+	font-family: monospace;
+	color: MidnightBlue;
+	background: #f8f8f8;
+	border-radius: 2pt;
+	padding: 1pt;
+/*
+    font-size=85%;
+	border: 1pt dotted silver;
+*/
+	}
+	
+i   {
+	color: Navy;
+	font-family: monospace;
+	}
+	
+h1  {
+	font-family: sans-serif;
+	text-align: center;
+    line-height: 1.1em;
+	}
+	
+h2  {
+    /*float: left;*/
+    margin-top: 0;
+    padding: 5px 15px 5px 0px;
+    line-height: 0.8em;
+	color: RoyalBlue;
+	font-family: sans-serif;
+	border-top: 1px dotted gray;
+	}
+table {
+	float: right;
+	margin: 20px;
+	border-collapse:collapse;
+	border-bottom: 1px solid Navy;
+	border-top: 1px solid Navy;
+	}
+td, th  {
+	padding: 1px 5px 1px 5px;
+	}
+tr:nth-child(even) {
+    background-color: PowderBlue;
+    margin: 1pt solid PowderBlue;
+}
+-->
+</style>
+
+<title>OOP Gestione Ateneo</title>
+</head>
+<body>
+<h1 style="text-align: center;">Gestione Ateneo</h1>
+<br>
+Progettare ed implementare un programma che possa gestire corsi, docenti e studenti di un ateneo. 
+Tutte le classi deveono appartenere al pacakge <b>university</b>.
+<p>
+Il programma interagisce attraverso la classe <b>University</b>.
+
+<h2>R1. Ateneo</h2>
+
+La classe principale con cui interagire &egrave; <b>University</b>, che riceve 
+come parametro del costruttore il nome dell'ateneo.<br>
+Il nome dell'ateneo &egrave; leggibile tramite il metodo getter <b>getName()</b>.<p>
+&Egrave; possibile definire il nome del rettore di un ateneo tramite il metodo
+<b>setRector()</b> che riceve come parametri nome e cognome del rettore.<br>
+Il metodo getter <b>getRector()</b> restituisce nome e cognome del rettore 
+concatenati con uno spazio (" ") in mezzo.<br>
+
+<h2>R2. Studenti</h2>
+
+&Egrave; possibile inserire le informazioni relativa ad un nuovo studente 
+tramite il metodo <b>enroll()</b> della classe University, che riceve come parametri
+il nome ed il cognome dello studente; il metodo reststituisce il numero di matricola che &egrave; 
+stato assegnato allo studente.
+<br>
+I numeri di matricola vengono assegnati, in maniera progressiva per ogni ateneo a partire 
+dal numero 10000. 
+<br>
+Si assuma che ciascun ateneo non possa contenere pi&ugrave; di 1000 studenti.
+<p>
+Per ottenere le informazioni relative ad uno studente si utilizza il metodo
+<b>student()</b> che riceve come parametro la matricola e restituisce una 
+stringa composta da numero di matricola, nome e cognome separati da spazi.
+
+<h2>R3. Insegnamenti</h2>
+
+Per definire un nuovo insegnamento si utilizza il metodo <b>activate()</b> che riceve come 
+parametri il titolo del corso e il nome del docente titolare. Il metodo restituisce un
+intero che corrisponde al codice del corso. I codici vengono assegnati progressivamente a 
+partire da 10.
+<br>
+Si assuma che ciascun ateneo non possa attivare pi&ugrave; di 50 insegnamenti.
+
+<p>
+Per conoscere le informazioni relative ad un corso si usa il metodo <b>course()</b> che riceve 
+come parametro il codice del corso e resituisce una stringa contenente codice, titolo e titolare
+del corso.
+</p>
+
+
+<h2>R4. Iscritti agli insegnamenti</h2>
+
+Gli studenti possono essere iscritti agli insegnamenti tramite il metodo <b>register()</b> che 
+riceve come parametro la matricola dello studente ed il codice del corso a cui iscriverlo.
+<br>
+Si assuma che ciascuno studente non possa essere iscritto a pi&ugrave; di 25 insegnamenti 
+e che un insegnamento non possa avere pi&ugrave; di 100 iscritti.
+
+<p>
+Per ottenere l'elenco degli iscritti ad un insegnamento &egrave; disponibile il metodo
+<b>listAttendees()</b> che riceve come parametro il codice dell'insegnamento e restituisce una
+stringa contenente l'elenco degli studenti iscritti.<br>
+Gli studenti compaiono uno per riga (le righe sono terminate da un a-capo "\n") secondo
+il formato descritto al punto R2.
+<p>
+Data la matricola di uno studente, tramite il metodo <b>studyPlan()</b>, &egrave; possibile conoscere
+l'elenco degli insegnamenti a cui &egrave; iscritto, gli insegnamenti sono descritti come 
+al punto precedente.
+
+<hr style="width: 100%; height: 2px;"><br>
+
+
+</body>
+</html>

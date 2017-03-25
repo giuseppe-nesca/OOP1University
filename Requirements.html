@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<style type="text/css">
+<!--
+body {
+	margin: 0.5cm;
+	/*
+	font-size: 13px;
+	*/
+	}
+p   {
+    margin-top: 0.1em;
+    margin-bottom: 0.5em;
+    }
+b   {
+	font-family: monospace;
+	color: MidnightBlue;
+	background: #f8f8f8;
+	border-radius: 2pt;
+	padding: 1pt;
+/*
+    font-size=85%;
+	border: 1pt dotted silver;
+*/
+	}
+	
+i   {
+	color: Navy;
+	font-family: monospace;
+	}
+	
+h1  {
+	font-family: sans-serif;
+	text-align: center;
+    line-height: 1.1em;
+	}
+	
+h2  {
+    /*float: left;*/
+    margin-top: 0;
+    padding: 5px 15px 5px 0px;
+    line-height: 0.8em;
+	color: RoyalBlue;
+	font-family: sans-serif;
+	border-top: 1px dotted gray;
+	}
+table {
+	float: right;
+	margin: 20px;
+	border-collapse:collapse;
+	border-bottom: 1px solid Navy;
+	border-top: 1px solid Navy;
+	}
+td, th  {
+	padding: 1px 5px 1px 5px;
+	}
+tr:nth-child(even) {
+    background-color: PowderBlue;
+    margin: 1pt solid PowderBlue;
+}
+-->
+</style>
+<title>OOP - University Management System</title>
+</head>
+<body>
+<h1 style="text-align: center;">University Management System</h1>
+
+Design and implement a program to manage university courses, teachers, and students.<br>
+All the classes must belong to the package <b>university</b>.
+<p>
+
+<h2>R1. University</h2>
+The user interface (not part of this assignment) interacts through the class <b>University</b>, 
+whose constructor receives as argument the name of the university.
+<br>
+The name of the university can be retrieved through method <b>getName()</b>.<p>
+It is possible to assign the name of the Rector by means of the method <b>setRector()</b> 
+that accepts as arguments the first and last name of the Rector.<br>
+The method <b>getRector()</b> returns the first and last name of the Rector concatenated and 
+separated by a blank space (<code>" "</code>).<br> 
+<br>
+
+<h2 id="R2" >R2. Students</h2>
+It is possible to enter information concerning a new student thought the method 
+<b>enroll()</b> of class <i>University</i>, that receives as arguments first and last name 
+of the student; the method returns the ID number that has been assigned to the student.<br>
+ID numbers are are assigned progressively in each university starting from number 10000.
+<br>
+We can assume that each university has at most 1000 enrolled students.
+<br>
+To retrieve the information about a student we can use the method <b>student()</b> 
+that receives as  an argument the ID number and returns a string made up of ID, first, 
+and last name separated by blank spaces. 
+<br>
+
+<h2>R3. Courses</h2>
+
+To define a new course we can use the method <b>activate()</b> that receives as arguments
+the title of the course and the name of the responsible teacher. The method returns an integer
+that corresponds to the course code. Course codes are assigned progressively starting from 10.
+<br>
+We can safely assume that no university has more than 50 courses.
+<br>
+To retrieve the information about a course we can used the method <b>course()</b> that accepts 
+the course's code and returns a string containing code, title, and teacher separated by blank 
+spaces.
+<p>
+
+<h2>R4. Course attendance</h2>
+
+Students that wish to attend a course must be registered through the method <b>register()</b> 
+that accepts as arguments the ID of the student and the course's code.
+<br>
+We can safely assume that no course has more than 100 attendees and that each student 
+can attend no more that 25 distinct courses.
+<p>
+To get the list of students attending a course we can use the method <b>listAttendees()</b> 
+that accepts the code of the course and returns a string containing the list of attendees.<br>
+The students appear one per row (rows are terminated by a new-line character <code>'\n'</code>) 
+and each row is formatted as describe in requirement <a href="#R2">R2</a>.
+<br>
+Given the ID of a student, it is possible to get the  list of courses she is attending
+through the method <b>studyPlan()</b>. The courses are described one per row and formatted 
+as described in requirement <a href="#R3">R3</a>.
+<p>
+
+<hr style="width: 100%; height: 2px;"><br>
+</body>
+</html>
