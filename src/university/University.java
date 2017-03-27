@@ -53,7 +53,13 @@ public class University {
 	}
 	
 	public void register(int studentsID, int courseCode){
-		//TODO: try catch o throw?	
+		studentsID-=ID_BASE; courseCode-=IDSUBJECT_BASE;
+		try{
+			students[studentsID].tryAddingCourses();
+			subjects[courseCode].subscription(studentsID);
+			students[studentsID].subcription(courseCode);
+		}catch(ArrayIndexOutOfBoundsException e){System.out.println("activate failed");
+			}
 			
 	}
 	

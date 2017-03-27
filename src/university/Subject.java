@@ -6,7 +6,7 @@ public class Subject {
 	private int ID;
 	private int[] studentsList;
 	private final int MAX_STUDENTS=100; //massimo studenti iscrivibili al corso
-	private int numStudents=-1; //studenti effettivamente iscritti al corso
+	private int numStudents=0; //studenti effettivamente iscritti al corso
 	
 	public Subject(String title, String teacher, int ID){
 		this.title=title; this.teacher=teacher; this.ID=ID;
@@ -15,4 +15,8 @@ public class Subject {
 	public String getTitle(){return title;}
 	public String getTeacher(){return teacher;}
 	public String getID(){ return Integer.toString(ID);}
+	public void subscription(int studentID)throws ArrayIndexOutOfBoundsException{
+		numStudents++;
+		studentsList[numStudents-1]=studentID;
+	}
 }
