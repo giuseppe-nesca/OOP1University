@@ -58,14 +58,19 @@ public class University {
 			students[studentsID].tryAddingCourses();
 			subjects[courseCode].subscription(studentsID);
 			students[studentsID].subcription(courseCode);
-		}catch(ArrayIndexOutOfBoundsException e){System.out.println("activate failed");
+		}catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("activate failed");
 			}
-			
 	}
 	
 	public String listAttendees(int courseCode){
-		//TODO: to be implemented
+		StringBuilder sb= new StringBuilder();
+		int[] students = this.subjects[courseCode].getStudents();
+		for(int i=0; i<students.length;i++){
+			
+		}
 		return null;
+//		return subjects[courseCode-IDSUBJECT_BASE].getStudents();
 	}
 
 	public String studyPlan(int studentsD){

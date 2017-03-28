@@ -19,4 +19,17 @@ public class Subject {
 		numStudents++;
 		studentsList[numStudents-1]=studentID;
 	}
+	public int[] getStudents(){
+		/*StringBuilder s= new StringBuilder();
+		for(int i=0; i< numStudents; i++){
+			if(i!=0) s.append('\n');
+			s.append(studentsList[i]);
+		}
+		return s.toString();*/
+		int[] ids= new int[numStudents];
+		for(int i=0; i< numStudents; i++){
+			ids[i]=studentsList[i];
+		}
+		return ids;
+	}
 }
