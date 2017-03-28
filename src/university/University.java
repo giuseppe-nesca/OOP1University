@@ -33,7 +33,11 @@ public class University {
 	}
 	
 	public int enroll(String first, String last){
-		students[++numstudents]= new Studente(first,last,ID_BASE+numstudents);		
+		try{
+			students[++numstudents]= new Studente(first,last,ID_BASE+numstudents);	
+		}catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("The student cannot join the university: it is full.");
+		}		
 		return (numstudents+ID_BASE);
 	}
 	
@@ -43,7 +47,11 @@ public class University {
 	}
 	
 	public int activate(String title, String teacher){
+		try{
 		subjects[++numSubjects]= new Subject(title, teacher, numSubjects+IDSUBJECT_BASE);
+		}catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("Subjects list is full.");
+		}
 		return numSubjects+IDSUBJECT_BASE;
 	}
 	
@@ -65,16 +73,19 @@ public class University {
 	
 	public String listAttendees(int courseCode){
 		StringBuilder sb= new StringBuilder();
-		int[] students = this.subjects[courseCode].getStudents();
-		for(int i=0; i<students.length;i++){
-			
+		int[] students = this.subjects[courseCode-IDSUBJECT_BASE].getStudents();
+		for(int i=0; i<students.length;i++){ 
+			sb.append(student(ID_BASE+i)+'\n');
 		}
-		return null;
-//		return subjects[courseCode-IDSUBJECT_BASE].getStudents();
+		return sb.toString();
 	}
 
 	public String studyPlan(int studentsD){
-		//TODO: to be implemented
-		return null;
+		StringBuilder sb= new StringBuilder();
+		int[] courses = this.students[studentsD-ID_BASE].getCourses();
+		for(int i=0; i<courses.length;i++){ 
+			sb.append(course(IDSUBJECT_BASE+i)+'\n');
+		}
+		return sb.toString();
 	}
 }

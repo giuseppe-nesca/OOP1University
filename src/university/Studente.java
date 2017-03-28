@@ -23,4 +23,11 @@ public class Studente {
 			numCourses++;
 			coursesList[numCourses-1]=sCode;
 		}
+		public int[] getCourses(){
+			int[] ids= new int[numCourses];
+			for(int i=0; i< numCourses; i++){
+				ids[i]=coursesList[i];
+			}
+			return ids;
+		}
 }
